@@ -25,9 +25,16 @@
 <meta property="twitter:image" content="https://i.postimg.cc/vZF3bvmG/IMG-20211220-124331.jpg">
 
 	<style type="text/css">
-		body{
-			background-color: #FF2E63;
-		}
+
+	body{
+		background-color: #FF2E63;
+		background-image:no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+	}
 		.responsive{
 			max-width: 100%;
 			height: 80%;
@@ -47,6 +54,7 @@
 			text-align: center;
 				}
 		p {
+
 				  text-align: center;
 				  font-size: 60px;
 				  margin-top: 0px;
@@ -55,12 +63,14 @@
 	</style>
 </head>
 <body>
-	<h1>To Our Big Day</h1>
-<h1>Live, Laugh, Love <br>
- &#129392;&#129392;&#129392;</h1>
+	<h1 id="H1">To Our Big Day</h1>
+	<h1 id="L">Live, Laugh, Love <br>
+	 &#129392;&#129392;&#129392;</h1>
 	<p id="demo"></p>
-	<h2>Tuesday, 10th of May</h2>
+	<p id="img"></p>
+	<h2 id="H2" >Tuesday, 10th of May</h2>
 <img src="https://i.postimg.cc/KcW0sbSk/IMG-20220331-152537.jpg" class="responsive">
+
 
 <script>
 // Set the date we're counting down to
@@ -85,12 +95,34 @@ var x = setInterval(function() {
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
+// if the count down is over, display an image
+if (distance < 0) {
+	let bbb = document.getElementById("img");
+ setTimeout(function(){
+		var yyy = document.createElement("IMG");
+		yyy.setAttribute("src", "https://cdn141.picsart.com/301122590272211.png");
+		yyy.setAttribute("width", "300");
+		yyy.setAttribute("height", "200");
+		yyy.setAttribute("alt", "just another image on the web");
+		document.getElementById("img").appendChild(yyy);
+		document.body.style.backgroundImage = "url(https://media.giphy.com/media/l2JHPB58MjfV8W3K0/giphy.gif)";
+		document.getElementById("H1").style.color="white";
+		document.getElementById("H2").style.color="white";
+		document.getElementById("demo").style.color="white";
+		document.getElementById("L").style.color="white";
+
+
+	}, 0);
+}
+var doda= Date()
   // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+    document.getElementById("demo").innerHTML = "The fun starts now!!<br>&#129395;&#129395;&#129395;&#129395;&#129395;";
+
+  };
+} , 0);
+
 </script>
 
 </body>
